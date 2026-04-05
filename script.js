@@ -1,5 +1,5 @@
 /* ============================================
-   AI Resume Ranking System - JavaScript Logic
+   Resume Ranking System - JavaScript Logic
    ============================================ */
 
 // ---------- DOM Elements ----------

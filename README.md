@@ -1,12 +1,12 @@
-# AI Resume Ranking System
+# Resume Ranking System
 
 <div align="center">
-  <p>A smart, browser-based resume screening tool that ranks candidates against job descriptions using intelligent keyword matching and TF-IDF scoring.</p>
+  <p>A browser-based resume screening tool that ranks candidates against job descriptions using keyword matching and TF-IDF scoring.</p>
 </div>
 
 ## 🌟 Overview
 
-The **AI Resume Ranking System** is designed to streamline the recruitment process. It allows recruiters and hiring managers to effortlessly analyze multiple resumes (.txt, .pdf, .docx) against a specific job description. By employing a robust keyword matching algorithm and mathematical weighting (TF-IDF), the system provides an objective and absolute percentage score representing how well each candidate matches the job requirements.
+The **Resume Ranking System** is designed to streamline the recruitment process. It allows recruiters and hiring managers to effortlessly analyze multiple resumes (.txt, .pdf, .docx) against a specific job description. By employing a robust keyword matching algorithm and mathematical weighting (TF-IDF), the system provides an objective and absolute percentage score representing how well each candidate matches the job requirements.
 
 The interface features a modern, premium **Liquid Glass** aesthetic with smooth animations and dynamic data visualization, ensuring an engaging user experience.
 
@@ -14,7 +14,7 @@ The interface features a modern, premium **Liquid Glass** aesthetic with smooth 
 
 - **Multi-format Resume Upload**: Seamlessly drag and drop `.pdf`, `.docx`, and `.txt` files.
 - **Job Description Parsing**: Paste your target job description, and the system instantly extracts core keywords.
-- **Intelligent Scoring (TF-IDF)**: Calculates a true JD Match Percentage based on term frequency and rarity across candidates.
+- **TF-IDF Scoring**: Calculates a true JD Match Percentage based on term frequency and rarity across candidates.
 - **Ranking Dashboard**: View candidates sorted from highest to lowest match score, complete with badges for top candidates and keyword coverage analysis.
 - **Algorithm Visualizer (DSA)**: An interactive modal that breaks down exactly how the scoring works, displaying Hash Maps, Term Frequencies, and Inverse Document Frequencies in a transparent way.
 - **Premium UI/UX**: A dark-themed, glassmorphic design built with vanilla HTML, CSS, and interactive JavaScript.
