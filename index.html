@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI-Based Resume Ranking System - Smartly rank candidates based on job description using intelligent keyword matching.">
+    <title>AI Resume Ranking System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fustat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ==================== LANDING PAGE ==================== -->
+    <section class="landing" id="landing">
+        <!-- Background Glow -->
+        <div class="landing-bg">
+            <div class="glow glow-1"></div>
+            <div class="glow glow-2"></div>
+        </div>
+
+        <nav class="glass-nav" id="glassNav">
+            <div class="glass-nav-inner">
+                <div class="nav-brand">ResumeAI</div>
+                <div class="nav-links">
+                    <a href="#landing" class="nav-link active">Home</a>
+                    <a href="#howItWorksModal" class="nav-link" id="navHowItWorks">How it Works</a>
+                    <a href="#about" class="nav-link">About Us</a>
+                    <button class="nav-theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+                        <span class="theme-icon sun">☀️</span>
+                        <span class="theme-icon moon">🌙</span>
+                    </button>
+                </div>
+                <button class="nav-mobile-toggle" id="mobileMenuBtn" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <div class="hero-container">
+            <div class="hero-content">
+                <!-- Social Proof Badge -->
+                <div class="social-proof">
+                    <div class="stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <span class="social-text">Rated 4.9/5 by 2700+ customers</span>
+                </div>
+
+                <!-- Headline -->
+                <h1 class="hero-headline">
+                    Work smarter,<br>analyze faster
+                </h1>
+
+                <!-- Subheadline -->
+                <p class="hero-subheadline">
+                    Effortlessly analyze your resume, rank yourself, and know your score with our efficient Resume Ranking System.
+                </p>
+
+                <!-- CTA -->
+                <button class="cta-btn" id="startBtn">
+                    <span>Get Started Now</span>
+                    <div class="cta-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </div>
+                </button>
+            </div>
+
+            <!-- Glassy Orb -->
+            <div class="hero-orb">
+                <video autoplay loop muted playsinline class="orb-video">
+                    <source src="https://future.co/images/homepage/glassy-orb/orb-purple.webm" type="video/webm">
+                </video>
+            </div>
+        </div>
+
+        <!-- Footer Logos -->
+        <div class="trusted-logos">
+            <p class="trusted-label">Trusted by top recruiting companies</p>
+            <div class="logos-row">
+                <svg class="company-logo" viewBox="0 0 120 30" fill="currentColor"><text x="0" y="22" font-size="18" font-weight="700" font-family="Inter,sans-serif">Google</text></svg>
+                <svg class="company-logo" viewBox="0 0 130 30" fill="currentColor"><text x="0" y="22" font-size="18" font-weight="700" font-family="Inter,sans-serif">Microsoft</text></svg>
+                <svg class="company-logo" viewBox="0 0 100 30" fill="currentColor"><text x="0" y="22" font-size="16" font-weight="700" font-family="Inter,sans-serif">Amazon</text></svg>
+                <svg class="company-logo" viewBox="0 0 80 30" fill="currentColor"><text x="0" y="22" font-size="18" font-weight="700" font-family="Inter,sans-serif">Meta</text></svg>
+                <svg class="company-logo" viewBox="0 0 90 30" fill="currentColor"><text x="0" y="22" font-size="18" font-weight="700" font-family="Inter,sans-serif">Apple</text></svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== MAIN APP ==================== -->
+    <section class="app-section" id="appSection">
+        <!-- Background Glow -->
+        <div class="app-bg">
+            <div class="app-glow app-glow-1"></div>
+            <div class="app-glow app-glow-2"></div>
+        </div>
+
+        <div class="container container-glass">
+            <!-- Header -->
+            <header class="app-header">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4z"/><circle cx="12" cy="15" r="2"/></svg>
+                    </div>
+                    <span>Resume</span>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-outline btn-glass btn-sm" id="howItWorksBtn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        How it Works
+                    </button>
+                    <button class="btn btn-outline btn-glass btn-sm" id="backToLanding">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                        Back
+                    </button>
+                </div>
+            </header>
+
+            <!-- Steps Indicator (Floating Glass Pill) -->
+            <div class="steps steps-glass">
+                <div class="step active" data-step="1">
+                    <div class="step-icon">1</div>
+                    <span>Upload</span>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step" data-step="2">
+                    <div class="step-icon">2</div>
+                    <span>Job Description</span>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step" data-step="3">
+                    <div class="step-icon">3</div>
+                    <span>Results</span>
+                </div>
+            </div>
+
+            <!-- Upload Section -->
+            <div class="panel glass-card" id="uploadPanel">
+                <div class="panel-header">
+                    <h2>Upload Resumes</h2>
+                    <p>Drop your .txt, .pdf, or .docx resume files below</p>
+                </div>
+                <div class="dropzone glass-dropzone" id="dropzone">
+                    <div class="dropzone-content">
+                        <div class="dropzone-icon bounce">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                        </div>
+                        <p class="dropzone-text">Drag & drop files here</p>
+                        <span class="dropzone-hint">or click to browse</span>
+                    </div>
+                    <input type="file" id="fileInput" multiple accept=".txt,.pdf,.docx" hidden>
+                </div>
+                <div class="file-list file-chips" id="fileList"></div>
+                <div class="panel-actions-center">
+                    <button class="cta-btn btn-liquid" id="toJobDescBtn" disabled>
+                        <span>Continue</span>
+                        <div class="cta-icon-small">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Job Description Section -->
+            <div class="panel glass-card hidden" id="jobDescPanel">
+                <div class="panel-header">
+                    <h2>Job Description</h2>
+                    <p>Paste the job description to match candidates against</p>
+                </div>
+                <div class="textarea-glass-wrapper">
+                    <textarea id="jobDescInput" class="glass-textarea" rows="8" placeholder="Paste job description...&#10;&#10;e.g. We need a software engineer with Python and React experience..."></textarea>
+                    <div class="char-count-minimal"><span id="charCount">0</span> chars</div>
+                </div>
+                <div class="panel-actions-between">
+                    <button class="btn btn-outline btn-glass" id="backToUploadBtn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                        Back
+                    </button>
+                    <button class="cta-btn btn-liquid" id="analyzeBtn" disabled>
+                        <span class="btn-text">Scan & Rank Resumes</span>
+                        <div class="cta-icon-small">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Loading Overlay -->
+            <div class="loading-overlay hidden" id="loadingOverlay">
+                <div class="loading-glass-card">
+                    <div class="loader">
+                        <div class="loader-ring"></div>
+                        <div class="loader-ring"></div>
+                        <div class="loader-brain">🧠</div>
+                    </div>
+                    <h3 class="loading-text">Analyzing Resumes...</h3>
+                    <p class="loading-subtext" id="loadingSubtext">Extracting keywords from job description</p>
+                    <div class="progress-bar-container glass-progress-bg">
+                        <div class="progress-bar gradient-fill" id="progressBar"></div>
+                    </div>
+                    <span class="progress-label" id="progressLabel">0%</span>
+                </div>
+            </div>
+
+            <!-- Results Dashboard -->
+            <div class="panel hidden" id="resultsPanel">
+                <div class="results-header-glass">
+                    <div>
+                        <h2>Ranking Dashboard</h2>
+                        <p>Candidates ranked by matching score</p>
+                    </div>
+                    <div class="header-actions">
+                        <button class="btn btn-outline btn-glass btn-sm" id="viewDsaBtn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2L22 2M2 22L22 22M2 12L22 12M12 2L12 22" stroke-opacity="0"/></svg>
+                            View Visualizer
+                        </button>
+                        <button class="btn btn-outline btn-glass btn-sm" id="startOverBtn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                            Start Over
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="results-summary glass-stats-row" id="resultsSummary">
+                    <!-- Global stats inserted here -->
+                </div>
+                
+                <div class="results-grid glass-candidates-grid" id="resultsGrid">
+                    <!-- Candidate cards inserted here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== DSA VISUALIZER MODAL ==================== -->
+    <div class="modal hidden" id="dsaModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Algorithm Visualizer <span class="badge" style="margin-left:8px; margin-bottom:0;">DSA</span></h2>
+                <button class="close-btn" id="closeModalBtn">✕</button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-desc">Explore the Hash Maps and TF-IDF (Text Frequency - Inverse Document Frequency) string matching data structures used to analyze the candidates.</p>
+                
+                <div class="dsa-section">
+                    <h3>1. Job Description Hash Map (Target)</h3>
+                    <p class="section-desc">Extracted keywords mapped to their frequencies (O(N) time complexity).</p>
+                    <div class="hashmap-container" id="jdHashmap"></div>
+                </div>
+
+                <div class="dsa-section">
+                    <div class="section-header">
+                        <h3>2. Candidate Analysis (TF-IDF Match)</h3>
+                        <select id="candidateSelect" class="styled-select"></select>
+                    </div>
+                    <p class="section-desc">Candidate's keyword Hash Map (TF) compared against the Global Inverse Document Frequencies (IDF).</p>
+                    <div class="hashmap-container" id="candidateHashmap"></div>
+                    
+                    <div class="table-container">
+                        <table class="dsa-table">
+                            <thead>
+                                <tr>
+                                    <th>Keyword</th>
+                                    <th>JD Freq</th>
+                                    <th>Resume Freq</th>
+                                    <th title="Term Frequency">TF</th>
+                                    <th title="Inverse Document Frequency">IDF</th>
+                                    <th>TF-IDF Score</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tfidfTableBody"></tbody>
+                        </table>
+                    </div>
+                    <div class="score-summary" id="candidateScoreSummary"></div>
+                </div>
+
+                <!-- Worked Example Section -->
+                <div class="dsa-section">
+                    <h3>3. Worked Example</h3>
+                    <p class="section-desc">Live scoring breakdown for the top-ranked candidate using your actual data.</p>
+                    <div class="example-block" id="workedExample">
+                        <p class="example-placeholder">Run an analysis to see a live worked example with your data.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== HOW IT WORKS MODAL ==================== -->
+    <div class="modal hidden" id="howItWorksModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>How it Works <span class="badge" style="margin-left:8px; margin-bottom:0;">Methodology</span></h2>
+                <button class="close-btn" id="closeHowItWorksBtn">✕</button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-desc">The complete scoring pipeline — from raw text to a JD match percentage that reflects true relevance, not relative ranking.</p>
+
+                <!-- Process Pipeline -->
+                <div class="dsa-section">
+                    <h3>Scoring Pipeline</h3>
+                    <div class="methodology-pipeline">
+                        <div class="pipeline-step">
+                            <div class="pipeline-icon">📝</div>
+                            <div class="pipeline-detail">
+                                <div class="pipeline-title">Step 1 — Tokenize</div>
+                                <div class="pipeline-text">Convert text to lowercase, remove special characters, split into words, and filter out common stop words (a, the, is, etc.).</div>
+                            </div>
+                        </div>
+                        <div class="pipeline-connector"></div>
+                        <div class="pipeline-step">
+                            <div class="pipeline-icon">🗂️</div>
+                            <div class="pipeline-detail">
+                                <div class="pipeline-title">Step 2 — Build Frequency Maps</div>
+                                <div class="pipeline-text">Create a Hash Map for the job description and each resume, counting how many times every keyword appears. Time complexity: O(N).</div>
+                            </div>
+                        </div>
+                        <div class="pipeline-connector"></div>
+                        <div class="pipeline-step">
+                            <div class="pipeline-icon">📊</div>
+                            <div class="pipeline-detail">
+                                <div class="pipeline-title">Step 3 — Calculate IDF</div>
+                                <div class="pipeline-text">Compute Inverse Document Frequency for each JD keyword — rare keywords across resumes get a higher weight, common ones get lower.</div>
+                            </div>
+                        </div>
+                        <div class="pipeline-connector"></div>
+                        <div class="pipeline-step">
+                            <div class="pipeline-icon">⚡</div>
+                            <div class="pipeline-detail">
+                                <div class="pipeline-title">Step 4 — Compute TF-IDF Scores</div>
+                                <div class="pipeline-text">For every matched keyword, multiply its resume frequency (TF) by its rarity weight (IDF) and the JD importance weight. Sum all to get the raw score.</div>
+                            </div>
+                        </div>
+                        <div class="pipeline-connector"></div>
+                        <div class="pipeline-step">
+                            <div class="pipeline-icon">🎯</div>
+                            <div class="pipeline-detail">
+                                <div class="pipeline-title">Step 5 — Absolute JD Match Score</div>
+                                <div class="pipeline-text">Divide each candidate's raw score by the <strong>theoretical maximum</strong> (what a perfect JD-matching resume would score). This gives a true percentage of how well the resume matches the job — no candidate automatically gets 100%.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulas -->
+                <div class="dsa-section">
+                    <h3>Formulas</h3>
+                    <div class="formula-grid">
+                        <div class="formula-card">
+                            <div class="formula-label">Term Frequency (TF)</div>
+                            <div class="formula-expr">TF(t, d) = count of term <em>t</em> in document <em>d</em></div>
+                        </div>
+                        <div class="formula-card">
+                            <div class="formula-label">Inverse Document Frequency (IDF)</div>
+                            <div class="formula-expr">IDF(t) = log<sub>10</sub>( (N + 1) / (df(t) + 1) )</div>
+                            <div class="formula-note">N = total resumes, df(t) = resumes containing term t. Min value clamped to 0.1.</div>
+                        </div>
+                        <div class="formula-card">
+                            <div class="formula-label">Per-Keyword Score</div>
+                            <div class="formula-expr">Score(t) = TF(t, d) × IDF(t) × JD_Freq(t)</div>
+                            <div class="formula-note">JD_Freq(t) = how many times the keyword appears in the job description, boosting important terms.</div>
+                        </div>
+                        <div class="formula-card">
+                            <div class="formula-label">Raw Score</div>
+                            <div class="formula-expr">RawScore(d) = Σ Score(t)  for all matched terms</div>
+                        </div>
+                        <div class="formula-card">
+                            <div class="formula-label">Theoretical Max Score</div>
+                            <div class="formula-expr">MaxPossible = Σ JD_Freq(t)² × IDF(t)  for all JD keywords</div>
+                            <div class="formula-note">The score a hypothetical "perfect" resume would get if it contained every JD keyword at the same frequency as the JD itself.</div>
+                        </div>
+                        <div class="formula-card formula-card-highlight">
+                            <div class="formula-label">Final JD Match Score</div>
+                            <div class="formula-expr">MatchScore = min( (RawScore / MaxPossible) × 100,  100 )</div>
+                            <div class="formula-note">This reflects true JD alignment. A resume scoring 65% genuinely matches 65% of the job requirements by weighted keyword coverage.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Output Explanation -->
+                <div class="dsa-section">
+                    <h3>Understanding the Output</h3>
+                    <p class="section-desc">Each candidate's result card shows:</p>
+                    <div class="output-explain-grid">
+                        <div class="output-explain-item">
+                            <div class="output-explain-icon">📊</div>
+                            <div>
+                                <strong>JD Match %</strong>
+                                <p>How closely the resume matches the job description on a 0–100% scale. This is an <em>absolute</em> metric — no candidate automatically gets 100%.</p>
+                            </div>
+                        </div>
+                        <div class="output-explain-item">
+                            <div class="output-explain-icon">🏷️</div>
+                            <div>
+                                <strong>Keyword Coverage</strong>
+                                <p>How many of the JD's extracted keywords were found in the resume (e.g., 8/12 matched).</p>
+                            </div>
+                        </div>
+                        <div class="output-explain-item">
+                            <div class="output-explain-icon">🏆</div>
+                            <div>
+                                <strong>Ranking</strong>
+                                <p>Candidates sorted from highest to lowest match score. Gold/silver/bronze badges for the top three.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
